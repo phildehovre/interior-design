@@ -1,0 +1,24 @@
+.home_gallery_grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5em
+}
+
+.image_row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em
+}
+
+.image_ctn {
+    height: 35svh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image_ctn.wide {
+    grid-column-end: span 2;
+}

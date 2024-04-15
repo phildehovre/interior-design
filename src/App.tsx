@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-      <h1>
-        GRIZ<span id="inverted">Z</span>LY
+      <h1 style={{ fontSize: "5rem" }}>
+        DE HOVRE
         <br />
         DESIGNS
       </h1>
