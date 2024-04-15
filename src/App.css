@@ -19,7 +19,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--primary-text)
+  color: var(--text-primary)
 }
 
 
@@ -29,7 +29,7 @@ a {
  left: 0;
  width: 100%; 
  height: 100svh;
- background: #0f0f0f;
+ background: var(--tertiary-bg);
  transform-origin: bottom;
 }
 .slide-out {
@@ -38,7 +38,7 @@ a {
  left: 0;
  width: 100%; 
  height: 100svh;
- background: #0f0f0f;
+ background: var(--tertiary-bg);
  transform-origin: top;
 }
 
@@ -47,4 +47,12 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%)
+}
+
+#inverted {
+  -moz-transform: scaleX(-1, -1);
+  -webkit-transform: scaleX(-1, -1);
+  -o-transform: scaleX(-1, -1);
+  -ms-transform: scaleX(-1, -1);
+  transform: scaleX(-1, -1);
 }
