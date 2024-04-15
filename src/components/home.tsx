@@ -5,14 +5,18 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   const fadeInAnimationVariants = {
-    initial: {
+    initial: (isEven: boolean) => ({
       opacity: 0,
-      x: 100,
-    },
-    animate: {
+      x: isEven ? 100 : -100,
+    }),
+    animate: () => ({
       opacity: 1,
       x: 1,
-    },
+      transition: {
+        duration: 1,
+        delay: 0.5,
+      },
+    }),
   };
 
   const groupedImages = (array: { src: string; description: string }[]) => {
@@ -27,27 +31,32 @@ const Home = () => {
     let images = groupedImages(unsortedImages);
     return images.map((group, i) => {
       const [image1, image2] = group;
+      var isEven = i % 2 === 0;
       return (
-        <div className="image_row" key={`row_${i}`}>
-          <motion.div
+        <motion.div
+          className="image_row"
+          key={`row_${i}`}
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          custom={isEven}
+          viewport={{
+            once: true,
+          }}
+        >
+          <div
             key={image1.src}
             className={`image_ctn ${i % 2 === 0 ? "wide" : ""}`}
             style={{ backgroundImage: `url(${image1.src})` }}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-          ></motion.div>
+          ></div>
           {image2 && (
-            <motion.div
+            <div
               key={image2.src}
               className={`image_ctn ${(i + 1) % 2 === 0 ? "wide" : ""}`}
               style={{ backgroundImage: `url(${image2.src})` }}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-            ></motion.div>
+            ></div>
           )}
-        </div>
+        </motion.div>
       );
     });
   };
