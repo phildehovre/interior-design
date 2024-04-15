@@ -6,13 +6,17 @@ import Home from "./components/home";
 import Projects from "./components/projects";
 import Header from "./components/shared/header";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { sortedImages } from "./assets/images";
 
 function App() {
   const location = useLocation();
 
   return (
     <>
+      <h1>
+        GRIZ<span id="inverted">Z</span>LY
+        <br />
+        DESIGNS
+      </h1>
       <Header />
       <main>
         <AnimatePresence mode="wait">

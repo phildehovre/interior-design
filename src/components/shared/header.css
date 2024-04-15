@@ -7,16 +7,12 @@ nav {
     position: relative;
     width: 100%;
     
-    ul {
+    .navbar_links.desktop {
+        padding: 0;
         display: flex;
         justify-content: space-between;
+        gap: 1.5em;
     }
-}
-
-.navbar_container {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
 }
 
 
@@ -46,8 +42,3 @@ nav {
 #dropdown_checkbox:checked~.dropdown_hamburger {
     outline: 1px solid red;
 }
-
-.dropdown_hamburger {
-    /* outline: 1px solid red; */
-}
-
